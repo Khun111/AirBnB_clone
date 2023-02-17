@@ -46,7 +46,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        '''Create a new instance of BaseModel, saves it (to the JSON file) and prints the id.'''
+        '''Create a new instance of BaseModel, saves it (to the JSON file)
+        and prints the id.'''
         arr = shlex.split(line)
         if len(arr) == 0:
             print('** class name missing **')
@@ -59,7 +60,8 @@ class HBNBCommand(cmd.Cmd):
         self.storage.save()
 
     def do_show(self, line):
-        '''Print the string representation of an instance based on the class name and id'''
+        '''Print the string representation of an instance
+        based on the class name and id'''
         arr = shlex.split(line)
         if len(arr) == 0:
             print('** class name missing **')
@@ -78,7 +80,8 @@ class HBNBCommand(cmd.Cmd):
             print(self.storage.all()[key])
 
     def do_destroy(self, line):
-        ''' Delete an instance based on the class name and id (save the change into the JSON file).'''
+        ''' Delete an instance based on the class name and
+        id (save the change into the JSON file).'''
         arr = shlex.split(line)
         if len(arr) == 0:
             print('** class name missing **')
@@ -98,7 +101,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, line):
-        '''Print all string representation of all instances based or not on the class name.'''
+        '''Print all string representation of all instances based
+        or not on the class name.'''
         arr = shlex.split(line)
         objects = self.storage.all().values()
         if not arr:
@@ -112,7 +116,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         '''
-        Update an instance based on the class name and id by adding or updating attribute
+        Update an instance based on the class name and id by adding or
+        updating attribute
         (save the change into the JSON file)
         '''
         arr = shlex.split(line)
@@ -179,24 +184,22 @@ class HBNBCommand(cmd.Cmd):
                     else:
                         call = "{} {}".format(line1[0], command[1])
                         if "{" in call:
-                            call = call.replace(",","")
-                            call = call.replace("{","")
-                            call = call.replace("}","")
-                            call = call.replace(":"," ")
-                            call = call.replace(",","")
+                            call = call.replace(",", "")
+                            call = call.replace("{", "")
+                            call = call.replace("}", "")
+                            call = call.replace(":", " ")
+                            call = call.replace(",", "")
                             call = shlex.split(call)
-                            while(len(call) > 2):
+                            while (len(call) > 2):
                                 action_map["update"](" ".join(call))
                                 del call[2:4]
                             return None
                         else:
-                            call = call.replace(",","")
+                            call = call.replace(",", "")
                             return action_map["update"](call)
-    
 
         print("*** Unknown syntax: {}".format(line))
         return False
-
 
 
 if __name__ == '__main__':
