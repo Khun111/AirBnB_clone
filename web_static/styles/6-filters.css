@@ -38,3 +38,20 @@ font-weight: 400;
 font-size: 14px;
 height: 50%;
 }
+ul, li {
+margin: 0;
+padding: 0;
+}
+.filters .popover {
+background-color: #FAFAFA;
+border: 1px solid #DDD;
+width: 100%;
+border-radius: 4px;
+position: absolute;
+}
+ul > h2 {
+font-size: 16px;
+}
+.locations ul {
+padding: 6px 0;
+}
