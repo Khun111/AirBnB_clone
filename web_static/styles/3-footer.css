@@ -3,9 +3,6 @@ background-color: #FFF;
 height: 60px;
 width: 100%;
 border-top: 1px solid #CCC;
-display: flex;
-align-items: center;
+text-align: center;
 justify-content: center;
-position: absolute;
-bottom: 0;
 }
