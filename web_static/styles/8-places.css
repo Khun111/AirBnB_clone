@@ -14,6 +14,10 @@ padding: 20px;
 margin: 20px;
 border: 1px solid #FF5A5F;
 border-radius: 4px;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+text-align: center;
 }
 article > h2 {
 font-size: 30px;
@@ -30,12 +34,15 @@ font-size: 30px;
 margin-top: 6px;
 }
 .price_by_home {
-display: flex;
+width: 100%;
 }
 .information {
 height: 80px;
 border-top: 1px solid #DDD;
 border-bottom: 1px solid #DDD;
+margin-bottom: 35px;
+display: flex;
+justify-content: center;
 }
 .max_guest, .number_rooms, .number_bathrooms {
 width: 100px;
@@ -44,17 +51,26 @@ width: 100px;
 width: 70px;
 height: 50px;
 background: url('../images/icon_group.png') no-repeat;
+margin-left: 35px;
 }
 .bathic {
 width: 70px;
 height: 50px;
 background: url('../images/icon_bath.png') no-repeat;
+margin-left: 35px;
 }
 .roomic {
 width: 70px;
 height: 50px;
 background: url('../images/icon_bed.png') no-repeat;
+margin-left: 35px;
 }
-.information {
-display: flex;
+.user {
+    text-align: left;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.description {
+    padding-top: 20px;
+    text-align: left;
 }
